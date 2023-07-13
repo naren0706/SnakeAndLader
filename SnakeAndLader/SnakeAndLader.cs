@@ -31,7 +31,8 @@ namespace SnakeAndLader
                     case NO_PLAY:
                         break;
                     case LADDER:
-                        this.position += dice;
+                        if(this.position+dice<100)
+                            this.position += dice;
                         break;
                     case SNAKE:
                         if(this.position<STARTING_POSITION )
