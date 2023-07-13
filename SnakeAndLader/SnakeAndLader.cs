@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace SnakeAndLader
 {
-    int position = 0;
-
     internal class SnakeAndLader
     {
+        int position = 0;
     }
 }
