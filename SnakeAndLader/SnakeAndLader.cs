@@ -12,18 +12,18 @@ namespace SnakeAndLader
     {
         const int NO_PLAY= 0, LADDER = 1, SNAKE = 2 , WINNING_POSITION = 100,STARTING_POSITION=0;
 
-        int position = 0;
+        int position = 0,count=0;
         Random random = new Random();   
         public int DieRoll()
         {
             int diePosition = random.Next(1,7);
-            Console.WriteLine( "Die POsition is"+diePosition);
+            Console.WriteLine( "Die Position is"+diePosition);
+            count++;
             return diePosition;
         }
         public void Game()
         {
             int option = random.Next(0,3);
-            int dice = DieRoll();
             while (this.position < WINNING_POSITION)
             {
                 switch (option)
@@ -31,18 +31,21 @@ namespace SnakeAndLader
                     case NO_PLAY:
                         break;
                     case LADDER:
-                        if(this.position+dice<100)
+                        int dice = DieRoll();
+                        if (this.position+dice<100)
                             this.position += dice;
                         break;
                     case SNAKE:
-                        if(this.position<STARTING_POSITION )
+                        dice = DieRoll();
+                        if (this.position<STARTING_POSITION )
                             this.position = 0;
                         else
                             this.position -= dice;
                         break;
                 }
             }
-        }
+            Console.WriteLine("the total number of dice rolled "+count);
+        } 
 
     }
 }
