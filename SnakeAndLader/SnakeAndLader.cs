@@ -37,7 +37,7 @@ namespace SnakeAndLader
                         if(this.position<STARTING_POSITION )
                             this.position = 0;
                         else
-                            this.position += dice;
+                            this.position -= dice;
                         break;
                 }
             }
