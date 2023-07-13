@@ -10,7 +10,7 @@ namespace SnakeAndLader
     
     internal class SnakeAndLader
     {
-        const int NO_PLAY= 0, LADDER = 1, SNAKE = 2;
+        const int NO_PLAY= 0, LADDER = 1, SNAKE = 2 , WINNING_POSITION = 100,STARTING_POSITION=0;
 
         int position = 0;
         Random random = new Random();   
@@ -24,16 +24,22 @@ namespace SnakeAndLader
         {
             int option = random.Next(0,3);
             int dice = DieRoll();
-            switch (option)
+            while (this.position < WINNING_POSITION)
             {
-                case NO_PLAY:
-                    break;
-                case LADDER:
-                    this.position += dice;
-                    break;
-                case SNAKE: 
-                    this.position -= dice;
-                    break;
+                switch (option)
+                {
+                    case NO_PLAY:
+                        break;
+                    case LADDER:
+                        this.position += dice;
+                        break;
+                    case SNAKE:
+                        if(this.position<STARTING_POSITION )
+                            this.position = 0;
+                        else
+                            this.position += dice;
+                        break;
+                }
             }
         }
 
