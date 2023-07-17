@@ -23,8 +23,7 @@ namespace SnakeAndLader
             Console.WriteLine("position of player2 \n" + player2position);
             Console.WriteLine("the total number of dice rolled " + player1.GetCount());
             Console.WriteLine("the total number of dice rolled " + player2.GetCount());
-            //Console.WriteLine( "last postion p1 "+player1.GetPosition());
-            //Console.WriteLine( "last postion p2 "+player2.GetPosition());
+           
             if (player1.GetWon()) Console.WriteLine("player 1 won");
             else if (player2.GetWon()) Console.WriteLine("player 2 won");
 
