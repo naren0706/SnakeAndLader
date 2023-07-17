@@ -63,7 +63,7 @@ namespace SnakeAndLader
                         
                         if (this.position+dice<=100)
                             this.position += dice;
-                    PlayGame();
+                        PlayGame();
                         break;
                     case SNAKE:
                         
